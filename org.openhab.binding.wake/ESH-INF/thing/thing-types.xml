@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="wake"
+                          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                          xmlns:thing="http://eclipse.org/smarthome/schemas/thing-description/v1.0.0"
+                          xsi:schemaLocation="http://eclipse.org/smarthome/schemas/thing-description/v1.0.0 http://eclipse.org/smarthome/schemas/thing-description-1.0.0.xsd">
+    <thing-type id="wakeHub">
+        <label>Wake HUB Device</label>
+        <description>
+            <![CDATA[
+            A WakeDevice device represents a device of real world. Each device function will be mapped to
+            a separate channel. The bridge is necessary as an intermediary between openHAB thing
+            and WakeDevice device.
+            ]]>
+        </description>
+        <channels>
+            <channel id="sensorTemperature" typeId="sensorTemperature"></channel>
+            <channel id="sensorHumidity" typeId="sensorHumidity"></channel>
+            <channel id="switchBinary-1" typeId="switchBinary"></channel>
+            <channel id="switchBinary-2" typeId="switchBinary"></channel>
+            <channel id="switchBinary-3" typeId="switchBinary"></channel>
+            <channel id="switchBinary-4" typeId="switchBinary"></channel>
+            <channel id="switchBinary-5" typeId="switchBinary"></channel>
+            <channel id="switchBinary-6" typeId="switchBinary"></channel>
+            <channel id="switchBinary-7" typeId="switchBinary"></channel>
+            <channel id="switchBinary-8" typeId="switchBinary"></channel>
+            <channel id="switchBinary-9" typeId="switchBinary"></channel>
+            <channel id="switchBinary-10" typeId="switchBinary"></channel>
+            <channel id="switchBinary-11" typeId="switchBinary"></channel>
+            <channel id="switchBinary-12" typeId="switchBinary"></channel>
+            <channel id="switchBinary-13" typeId="switchBinary"></channel>
+            <channel id="switchBinary-14" typeId="switchBinary"></channel>
+            <channel id="switchMultilevel-3" typeId="switchMultilevel"></channel>
+            <channel id="switchMultilevel-5" typeId="switchMultilevel"></channel>
+            <channel id="switchMultilevel-6" typeId="switchMultilevel"></channel>
+            <channel id="switchMultilevel-9" typeId="switchMultilevel"></channel>
+            <channel id="switchMultilevel-10" typeId="switchMultilevel"></channel>
+            <channel id="switchMultilevel-11" typeId="switchMultilevel"></channel>
+            <channel id="sensorBinary-1" typeId="sensorBinary"></channel>
+            <channel id="sensorBinary-2" typeId="sensorBinary"></channel>
+            <channel id="sensorBinary-3" typeId="sensorBinary"></channel>
+            <channel id="sensorBinary-4" typeId="sensorBinary"></channel>
+            <channel id="sensorBinary-5" typeId="sensorBinary"></channel>
+            <channel id="sensorBinary-6" typeId="sensorBinary"></channel>
+            <channel id="sensorBinary-7" typeId="sensorBinary"></channel>
+            <channel id="sensorBinary-8" typeId="sensorBinary"></channel>
+            <channel id="sensorBinary-9" typeId="sensorBinary"></channel>
+            <channel id="sensorBinary-10" typeId="sensorBinary"></channel>
+            <channel id="sensorBinary-11" typeId="sensorBinary"></channel>
+            <channel id="sensorBinary-12" typeId="sensorBinary"></channel>
+            <channel id="sensorBinary-13" typeId="sensorBinary"></channel>
+            <channel id="sensorBinary-14" typeId="sensorBinary"></channel>
+        </channels>
+
+        <config-description>
+            <parameter name="wakeAddress" type="integer" required="true">
+                <label>Wake Address</label>
+                <description>Address of the Wake Device</description>
+            </parameter>
+            <parameter name="refresh" type="integer" min="10" required="false">
+                <label>Refresh interval</label>
+                <description>Specifies the refresh interval in seconds.</description>
+                <default>30</default>
+            </parameter>
+
+        </config-description>
+    </thing-type>
+
+    <thing-type id="wakeSensor">
+        <label>Wake sensor Device</label>
+        <description>
+            <![CDATA[
+            A Wake virtual device represents one sensor, actor with the corresponding channel.
+            The bridge is necessary as an intermediary between openHAB thing and Wake device.
+            ]]>
+        </description>
+        <channels>
+            <channel id="sensorTemperature" typeId="sensorTemperature"></channel>
+            <channel id="sensorBinary" typeId="sensorBinary"></channel>
+        </channels>
+        <config-description>
+            <parameter name="deviceId" type="text" required="true">
+                <label>Device Id</label>
+                <description>Device Id of virtual device (for example address of 1-wire device)</description>
+            </parameter>
+            <parameter name="wakeAddress" type="integer" required="true">
+                <label>Wake Address</label>
+                <description>Address of the Wake Device</description>
+            </parameter>
+            <parameter name="refresh" type="integer" min="10" required="false">
+                <label>Refresh interval</label>
+                <description>Specifies the refresh interval in seconds.</description>
+                <default>60</default>
+            </parameter>
+
+        </config-description>
+    </thing-type>
+
+    <channel-type id="sensorTemperature">
+        <item-type>Number</item-type>
+        <label>Temperature</label>
+        <category>Temperature</category>
+        <state readOnly="true" pattern="%.1f °C" />
+    </channel-type>
+
+    <channel-type id="sensorHumidity">
+        <item-type>Number</item-type>
+        <label>Humidity</label>
+        <category>Humidity</category>
+        <state readOnly="true" pattern="%.1f %%" />
+    </channel-type>
+
+    <channel-type id="sensorBinary">
+        <item-type>Switch</item-type>
+        <label>Sensor binary</label>
+        <description>This channel represents a universal channel if no further device information is available.</description>
+        <category>Switch</category>
+        <state readOnly="true" />
+    </channel-type>
+
+    <channel-type id="switchBinary">
+        <item-type>Switch</item-type>
+        <label>Switch binary</label>
+        <description>This channel represents a universal channel if no further device information is available.</description>
+        <category>Switch</category>
+        <state readOnly="false"/>
+    </channel-type>
+
+    <channel-type id="switchMultilevel">
+        <item-type>Dimmer</item-type>
+        <label>Switch multilevel</label>
+        <description>This channel represents a universal channel if no further device information is available.</description>
+        <state readOnly="false" />
+    </channel-type>
+
+    <channel-type id="sensorMultilevel">
+        <item-type>Number</item-type>
+        <label>Switch multilevel</label>
+        <description>This channel represents a universal channel if no further device information is available.</description>
+        <state readOnly="true" />
+    </channel-type>
+
+
+    <channel-type id="switchColor">
+        <item-type>Color</item-type>
+        <label>Switch color</label>
+        <description>This channel represents the rgbw switch device type from Z-Way.</description>
+        <category>ColorLight</category>
+    </channel-type>
+
+
+</thing:thing-descriptions>

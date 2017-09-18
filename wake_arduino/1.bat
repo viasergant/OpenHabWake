@@ -1,0 +1,1 @@
+"C:\Program Files (x86)\Arduino\hardware\tools\avr/bin/avrdude" -C"C:\Program Files (x86)\Arduino\hardware\tools\avr/etc/avrdude.conf" -v -patmega168 -carduino -PCOM7 -b19200 -D -Uflash:w:"C:\Users\SERHIY~1\AppData\Local\Temp\arduino_build_284985/wakeUp.ino.hex:i"
