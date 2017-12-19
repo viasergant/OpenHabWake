@@ -13,42 +13,9 @@
             ]]>
         </description>
         <channels>
-            <channel id="sensorTemperature" typeId="sensorTemperature"></channel>
-            <channel id="sensorHumidity" typeId="sensorHumidity"></channel>
-            <channel id="switchBinary-1" typeId="switchBinary"></channel>
-            <channel id="switchBinary-2" typeId="switchBinary"></channel>
-            <channel id="switchBinary-3" typeId="switchBinary"></channel>
-            <channel id="switchBinary-4" typeId="switchBinary"></channel>
-            <channel id="switchBinary-5" typeId="switchBinary"></channel>
-            <channel id="switchBinary-6" typeId="switchBinary"></channel>
-            <channel id="switchBinary-7" typeId="switchBinary"></channel>
-            <channel id="switchBinary-8" typeId="switchBinary"></channel>
-            <channel id="switchBinary-9" typeId="switchBinary"></channel>
-            <channel id="switchBinary-10" typeId="switchBinary"></channel>
             <channel id="switchBinary-11" typeId="switchBinary"></channel>
-            <channel id="switchBinary-12" typeId="switchBinary"></channel>
-            <channel id="switchBinary-13" typeId="switchBinary"></channel>
-            <channel id="switchBinary-14" typeId="switchBinary"></channel>
-            <channel id="switchMultilevel-3" typeId="switchMultilevel"></channel>
-            <channel id="switchMultilevel-5" typeId="switchMultilevel"></channel>
-            <channel id="switchMultilevel-6" typeId="switchMultilevel"></channel>
-            <channel id="switchMultilevel-9" typeId="switchMultilevel"></channel>
-            <channel id="switchMultilevel-10" typeId="switchMultilevel"></channel>
-            <channel id="switchMultilevel-11" typeId="switchMultilevel"></channel>
-            <channel id="sensorBinary-1" typeId="sensorBinary"></channel>
-            <channel id="sensorBinary-2" typeId="sensorBinary"></channel>
-            <channel id="sensorBinary-3" typeId="sensorBinary"></channel>
             <channel id="sensorBinary-4" typeId="sensorBinary"></channel>
             <channel id="sensorBinary-5" typeId="sensorBinary"></channel>
-            <channel id="sensorBinary-6" typeId="sensorBinary"></channel>
-            <channel id="sensorBinary-7" typeId="sensorBinary"></channel>
-            <channel id="sensorBinary-8" typeId="sensorBinary"></channel>
-            <channel id="sensorBinary-9" typeId="sensorBinary"></channel>
-            <channel id="sensorBinary-10" typeId="sensorBinary"></channel>
-            <channel id="sensorBinary-11" typeId="sensorBinary"></channel>
-            <channel id="sensorBinary-12" typeId="sensorBinary"></channel>
-            <channel id="sensorBinary-13" typeId="sensorBinary"></channel>
-            <channel id="sensorBinary-14" typeId="sensorBinary"></channel>
         </channels>
 
         <config-description>

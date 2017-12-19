@@ -79,11 +79,15 @@ public class WakeSensorHandler extends BaseThingHandler {
                 }
 
                 if (result != null && result.getCodeErr().byteValue() == 0) {
-                    for (Channel channel : getThing().getChannels()) {
-                        if (channel.getUID().getId().equals(SENSOR_TEMPERATURE)) {
-                            updateState(channel.getUID(), new DecimalType(result.getDataAsString()));
-                            updateStatus(ThingStatus.ONLINE);
+                    if (result.getDataAsString() != null && !result.getDataAsString().equals("-127.00")) {
+                        for (Channel channel : getThing().getChannels()) {
+                            if (channel.getUID().getId().equals(SENSOR_TEMPERATURE)) {
+                                updateState(channel.getUID(), new DecimalType(result.getDataAsString()));
+                                updateStatus(ThingStatus.ONLINE);
+                            }
                         }
+                    } else {
+                        updateStatus(ThingStatus.OFFLINE, ThingStatusDetail.OFFLINE.COMMUNICATION_ERROR);
                     }
                 }
             } catch (Exception e) {
